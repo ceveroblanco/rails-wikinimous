@@ -1,0 +1,12 @@
+<h1> Article index</h1>
+
+
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %></li>
+    <%= link_to  "borrar", article_path(article.id), method: :delete, data: { confirm: "estas seguro?" } %>
+  <% end %>
+</ul>
+
+<%= link_to  "CREAR NUEVA TASK", new_article_path(@article) %>
+
